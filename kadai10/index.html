@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>条件分岐サンプル</title>
+<script>
+       function check() {
+           // 入力値を取得し、数値に変換
+           const x = parseInt(document.getElementById("inputX").value, 10);
+           const resultElement = document.getElementById("result");
+           const xSquaredElement = document.getElementById("xSquared");
+           // x²を計算して表示
+           xSquaredElement.innerHTML = `x<sup>2</sup> = ${x * x}`;
+           // 条件分岐
+           if (x === 2 || x === 4) {
+               resultElement.textContent = "【正解!】";
+           } else {
+               resultElement.textContent = "【間違い!】";
+           }
+       }
+</script>
+</head>
+<body>
+<h1>条件分岐サンプル</h1>
+<p>以下に数字を入力してください:</p>
+<input type="number" id="inputX" placeholder="数字を入力">
+<button onclick="check()">判定</button>
+<p id="xSquared"></p>
+<p id="result"></p>
+</body>
+</html>
